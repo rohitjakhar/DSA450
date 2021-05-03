@@ -9,9 +9,9 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navArgument
 import androidx.navigation.compose.rememberNavController
+import com.rohitjakhar.dsa450.navigation.Screen
 import com.rohitjakhar.dsa450.ui.home.Home
 import com.rohitjakhar.dsa450.ui.home.HomeViewModel
-import com.rohitjakhar.dsa450.navigation.Screen
 import com.rohitjakhar.dsa450.ui.questionlist.QuestionList
 import com.rohitjakhar.dsa450.ui.theme.DSA450Theme
 

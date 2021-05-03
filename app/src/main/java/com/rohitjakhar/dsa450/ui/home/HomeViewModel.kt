@@ -4,7 +4,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.rohitjakhar.dsa450.data.LocalRepository
 import com.rohitjakhar.dsa450.model.Category
-import com.rohitjakhar.dsa450.model.Question
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
