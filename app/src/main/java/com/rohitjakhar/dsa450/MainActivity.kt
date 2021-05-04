@@ -13,6 +13,7 @@ import com.rohitjakhar.dsa450.navigation.Screen
 import com.rohitjakhar.dsa450.ui.home.Home
 import com.rohitjakhar.dsa450.ui.home.HomeViewModel
 import com.rohitjakhar.dsa450.ui.questionlist.QuestionList
+import com.rohitjakhar.dsa450.ui.questionlist.QuestionListViewModel
 import com.rohitjakhar.dsa450.ui.theme.DSA450Theme
 
 class MainActivity : ComponentActivity() {
@@ -23,6 +24,7 @@ class MainActivity : ComponentActivity() {
                 // A surface container using the 'background' color from the theme
                 val navController = rememberNavController()
                 val homeViewModel by viewModels<HomeViewModel>()
+                val questionListViewModel by viewModels<QuestionListViewModel>()
                 NavHost(
                     navController,
                     startDestination = Screen.HomeScreen.route
@@ -38,7 +40,9 @@ class MainActivity : ComponentActivity() {
                         arguments = listOf(navArgument("category_id") { type = NavType.IntType })
                     ) { navBackStack ->
                         QuestionList(
-                            navBackStack.arguments?.getInt("category_id")
+                            id = navBackStack.arguments?.getInt("category_id"),
+                            questionListViewModel = questionListViewModel,
+                            navController = navController
                         )
                     }
                 }

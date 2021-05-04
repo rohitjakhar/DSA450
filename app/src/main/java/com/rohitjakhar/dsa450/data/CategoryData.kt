@@ -24,9 +24,9 @@ object CategoryData {
         categoryName = "Searching",
         categoryTotalQuestion = 36,
     )
-    val LinkedlistQuestion = Category(
+    val LinkedListQuestion = Category(
         categoryId = 5,
-        categoryName = "Linkedlist",
+        categoryName = "LinkedList",
         categoryTotalQuestion = 36,
     )
     val BinaryTreesQuestion = Category(

@@ -15,7 +15,7 @@ class HomeViewModel : ViewModel() {
 
     init {
         viewModelScope.launch {
-            _categoryList.value = localRepo.listOfCategory
+            _categoryList.value = localRepo.getCategory()
         }
     }
 }
