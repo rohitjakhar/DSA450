@@ -14,7 +14,6 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -40,14 +39,17 @@ fun Home(
                         .clickable { navController.navigate("${Screen.QuestionListScreen.route}/${category.categoryId}") }
                         .border(1.dp, Color.Cyan, RoundedCornerShape(CornerSize(8.dp)))
 
-
                 ) {
                     Column(
                         modifier = Modifier
                             .fillMaxSize()
                             .padding(10.dp)
                     ) {
-                        Text(text = category.categoryName, fontSize = 24.sp, fontStyle = FontStyle.Normal)
+                        Text(
+                            text = category.categoryName,
+                            fontSize = 24.sp,
+                            fontStyle = FontStyle.Normal
+                        )
                         Text(text = "Total questions ${category.categoryTotalQuestion}")
                     }
                 }
