@@ -1,7 +1,11 @@
 package com.rohitjakhar.dsa450.model
 
+import com.squareup.moshi.Json
+
 data class Category(
+
+    @Json(name = "position")
     val categoryId: Int,
+    @Json(name = "TopicName")
     val categoryName: String,
-    val categoryTotalQuestion: Int,
 )

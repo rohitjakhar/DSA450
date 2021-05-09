@@ -12,6 +12,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontStyle
@@ -26,8 +27,9 @@ fun Home(
     homeViewModel: HomeViewModel,
     navController: NavController
 ) {
-    val categoryList = homeViewModel.categoryList
+    val categoryList = homeViewModel.categoryList.collectAsState()
     Log.d("debug450", "Load Home")
+    Log.d("debug450", categoryList.value.toString())
     LazyColumn(
         content = {
             items(categoryList.value.size) { index: Int ->
@@ -37,7 +39,7 @@ fun Home(
                         .fillMaxSize()
                         .padding(10.dp)
                         .clickable { navController.navigate("${Screen.QuestionListScreen.route}/${category.categoryId}") }
-                        .border(1.dp, Color.Cyan, RoundedCornerShape(CornerSize(8.dp)))
+                        .border(1.dp, Color(0xFFEDC126), RoundedCornerShape(CornerSize(8.dp)))
 
                 ) {
                     Column(
@@ -50,7 +52,6 @@ fun Home(
                             fontSize = 24.sp,
                             fontStyle = FontStyle.Normal
                         )
-                        Text(text = "Total questions ${category.categoryTotalQuestion}")
                     }
                 }
             }

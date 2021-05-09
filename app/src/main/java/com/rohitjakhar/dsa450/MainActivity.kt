@@ -41,8 +41,7 @@ class MainActivity : ComponentActivity() {
                     ) { navBackStack ->
                         QuestionList(
                             id = navBackStack.arguments?.getInt("category_id"),
-                            questionListViewModel = questionListViewModel,
-                            navController = navController
+                            questionListViewModel = questionListViewModel
                         )
                     }
                 }
