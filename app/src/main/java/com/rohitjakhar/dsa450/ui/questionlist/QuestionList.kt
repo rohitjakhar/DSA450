@@ -16,13 +16,14 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 
 @Composable
 fun QuestionList(
-    id: Int?,
+    id: Int ? = 0,
     questionListViewModel: QuestionListViewModel
 ) {
     val context = LocalContext.current
@@ -43,6 +44,7 @@ fun QuestionList(
                             intent.data = Uri.parse(question.questionLink)
                             context.startActivity(intent)
                         }
+                        .clip(RoundedCornerShape(8.dp))
                         .border(1.dp, Color(0xFFEDC126), RoundedCornerShape(CornerSize(8.dp)))
                 ) {
                     Row(
