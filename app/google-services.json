@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "882260534441",
+    "project_id": "dsa-450-557d7",
+    "storage_bucket": "dsa-450-557d7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:882260534441:android:bc6774c2fbd84564d535b8",
+        "android_client_info": {
+          "package_name": "com.rohitjakhar.dsa450"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "882260534441-9v9kkiikofnamvqt625iuo677v9c55l5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYStWcoUKJ_9CsXA2y2YreZZDauM8VPbs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "882260534441-9v9kkiikofnamvqt625iuo677v9c55l5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
