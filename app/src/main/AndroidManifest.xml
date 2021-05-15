@@ -13,6 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DSA450">
+
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -31,7 +32,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ui.AuthActivity">
+        <activity android:name=".ui.AuthActivity"
+            android:theme="@style/Theme.DSA450.NoActionBar">
 
         </activity>
     </application>

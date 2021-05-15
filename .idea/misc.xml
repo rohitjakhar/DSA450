@@ -4,7 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../layout/compose-model-1620811962954.xml" value="0.3146114864864865" />
+        <entry key="../../../../layout/compose-model-1621061200578.xml" value="0.3146114864864865" />
+        <entry key="../../../../layout/compose-model-1621065915195.xml" value="0.3146114864864865" />
+        <entry key="../../../../layout/compose-model-1621067007170.xml" value="0.3146114864864865" />
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.17604166666666668" />
         <entry key="app/src/main/res/drawable/ic_login_logo.xml" value="0.21666666666666667" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.17604166666666668" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.17604166666666668" />
       </map>
     </option>
   </component>

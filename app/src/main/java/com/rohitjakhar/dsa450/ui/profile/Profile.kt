@@ -17,12 +17,12 @@ import coil.transform.CircleCropTransformation
 import com.google.accompanist.coil.rememberCoilPainter
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import com.rohitjakhar.dsa450.model.utils.Constant.DEFAULT_USER_IMAGE
 import com.rohitjakhar.dsa450.ui.SplashScreen
 
 @Composable
 fun Profile(
     navController: NavController,
-
 ) {
     val context = LocalContext.current
     Column(
@@ -35,7 +35,7 @@ fun Profile(
 
         Image(
             painter = rememberCoilPainter(
-                request = userinfo?.photoUrl,
+                request = userinfo?.photoUrl ?: DEFAULT_USER_IMAGE,
                 requestBuilder = {
                     transformations(CircleCropTransformation())
                 }
@@ -62,13 +62,17 @@ fun Profile(
         }
         Spacer(modifier = Modifier.padding(0.dp, 16.dp))
 
-        Button(
-            onClick = {
-                Firebase.auth.signOut()
-                context.startActivity(Intent(context.applicationContext, SplashScreen::class.java))
-            }
+        Column(
+            verticalArrangement = Arrangement.Bottom
         ) {
-            Text("Logout")
+            Button(
+                onClick = {
+                    Firebase.auth.signOut()
+                    context.startActivity(Intent(context.applicationContext, SplashScreen::class.java))
+                },
+            ) {
+                Text("Logout")
+            }
         }
     }
 }

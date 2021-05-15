@@ -10,6 +10,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.Share
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -17,7 +19,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavType
-import androidx.navigation.compose.*
+import androidx.navigation.compose.* // ktlint-disable no-wildcard-imports
 import com.rohitjakhar.dsa450.navigation.Screen
 import com.rohitjakhar.dsa450.ui.about.About
 import com.rohitjakhar.dsa450.ui.home.Home
@@ -31,7 +33,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            DSA450Theme {
+            DSA450Theme() {
                 val navController = rememberNavController()
                 val homeViewModel by viewModels<HomeViewModel>()
                 val questionListViewModel by viewModels<QuestionListViewModel>()
@@ -65,6 +67,11 @@ class MainActivity : ComponentActivity() {
                                     }
                                 )
                             }
+                        }
+                    },
+                    floatingActionButton = {
+                        FloatingActionButton(onClick = { /*TODO*/ }) {
+                            Icon(Icons.Rounded.Share, contentDescription = "Share")
                         }
                     }
                 ) { innerPadding ->
@@ -102,7 +109,7 @@ class MainActivity : ComponentActivity() {
                                 Profile(navController = navController)
                             }
                             composable(route = Screen.About.route) {
-                                About(navController = navController)
+                                About()
                             }
                         }
                     }

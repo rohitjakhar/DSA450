@@ -2,7 +2,6 @@ package com.rohitjakhar.dsa450.ui
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -12,6 +11,7 @@ import androidx.activity.viewModels
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.* // ktlint-disable no-wildcard-imports
 import androidx.compose.material.Button
+import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -34,14 +34,13 @@ class AuthActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            DSA450Theme {
+            DSA450Theme() {
                 val context = LocalContext.current
                 val authViewModel by viewModels<AuthViewModel>()
                 val gso =
                     rememberLauncherForActivityResult(contract = ActivityResultContracts.StartActivityForResult()) { it ->
                         if (it.resultCode == RESULT_OK) {
                             val task = GoogleSignIn.getSignedInAccountFromIntent(it.data)
-                            Log.d("authde", "in try")
                             val account = task.getResult(ApiException::class.java)
                             val credential =
                                 GoogleAuthProvider.getCredential(account!!.idToken, null)
@@ -79,50 +78,53 @@ class AuthActivity : ComponentActivity() {
                         }
                     }
 
-                Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                    Column(
-                        verticalArrangement = Arrangement.Center,
-                        horizontalAlignment = Alignment.CenterHorizontally
-                    ) {
-                        Image(
-                            painterResource(id = R.drawable.ic_login_logo),
-                            contentDescription = "Login", contentScale = ContentScale.Inside
-                        )
+                Scaffold {
+                    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+                        Column(
+                            verticalArrangement = Arrangement.Center,
+                            horizontalAlignment = Alignment.CenterHorizontally
+                        ) {
+                            Image(
+                                painterResource(id = R.drawable.ic_login_logo),
+                                contentDescription = "Login", contentScale = ContentScale.Inside
+                            )
 
-                        Spacer(modifier = Modifier.padding(0.dp, 16.dp))
-                        Row(
-                            horizontalArrangement = Arrangement.Center,
-                            verticalAlignment = Alignment.CenterVertically
-                        ) {
-                            Button(
-                                onClick = {
-                                    val gsp =
-                                        GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                                            .requestIdToken(
-                                                "882260534441-9v9kkiikofnamvqt625iuo677v9c55l5.apps.googleusercontent.com"
-                                            )
-                                            .requestEmail()
-                                            .build()
-                                    val googleSignInClient = GoogleSignIn.getClient(context, gsp)
-                                    val signingINtent = googleSignInClient.signInIntent
-                                    gso.launch(signingINtent)
-                                },
+                            Spacer(modifier = Modifier.padding(0.dp, 16.dp))
+                            Row(
+                                horizontalArrangement = Arrangement.Center,
+                                verticalAlignment = Alignment.CenterVertically
                             ) {
-                                Text("Login")
+                                Button(
+                                    onClick = {
+                                        val gsp =
+                                            GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                                                .requestIdToken(
+                                                    context.resources.getString(R.string.default_web_client_id)
+                                                )
+                                                .requestEmail()
+                                                .build()
+                                        val googleSignInClient =
+                                            GoogleSignIn.getClient(context, gsp)
+                                        val signingINtent = googleSignInClient.signInIntent
+                                        gso.launch(signingINtent)
+                                    },
+                                ) {
+                                    Text("Login")
+                                }
                             }
-                        }
-                        Spacer(modifier = Modifier.padding(0.dp, 16.dp))
-                        Row(
-                            horizontalArrangement = Arrangement.Center,
-                            verticalAlignment = Alignment.CenterVertically
-                        ) {
-                            Button(
-                                onClick = {
-                                    startActivity(Intent(context, MainActivity::class.java))
-                                    finish()
-                                },
+                            Spacer(modifier = Modifier.padding(0.dp, 16.dp))
+                            Row(
+                                horizontalArrangement = Arrangement.Center,
+                                verticalAlignment = Alignment.CenterVertically
                             ) {
-                                Text("Anonymously")
+                                Button(
+                                    onClick = {
+                                        startActivity(Intent(context, MainActivity::class.java))
+                                        finish()
+                                    },
+                                ) {
+                                    Text("Anonymously")
+                                }
                             }
                         }
                     }
