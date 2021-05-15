@@ -1,7 +1,8 @@
 package com.rohitjakhar.dsa450.ui.questionlist
 
-import android.content.Intent
+import android.content.Context
 import android.net.Uri
+import androidx.browser.customtabs.CustomTabsIntent
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -23,7 +24,7 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun QuestionList(
-    id: Int ? = 0,
+    id: Int? = 0,
     questionListViewModel: QuestionListViewModel
 ) {
     val context = LocalContext.current
@@ -40,9 +41,7 @@ fun QuestionList(
                     modifier = Modifier
                         .padding(8.dp)
                         .clickable {
-                            val intent = Intent(Intent.ACTION_VIEW)
-                            intent.data = Uri.parse(question.questionLink)
-                            context.startActivity(intent)
+                            openChromeTab(context, Uri.parse(question.questionLink))
                         }
                         .clip(RoundedCornerShape(8.dp))
                         .border(1.dp, Color(0xFFEDC126), RoundedCornerShape(CornerSize(8.dp)))
@@ -63,4 +62,10 @@ fun QuestionList(
             }
         }
     )
+}
+
+fun openChromeTab(context: Context, questionLink: Uri) {
+    val customIntent = CustomTabsIntent.Builder()
+        .build()
+    customIntent.launchUrl(context, questionLink)
 }
