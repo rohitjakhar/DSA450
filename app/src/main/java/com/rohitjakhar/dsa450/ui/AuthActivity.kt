@@ -24,8 +24,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.GoogleAuthProvider
-import com.rohitjakhar.dsa450.AuthViewModel
-import com.rohitjakhar.dsa450.MainActivity
+import com.rohitjakhar.dsa450.ui.viewmodel.AuthViewModel
 import com.rohitjakhar.dsa450.R
 import com.rohitjakhar.dsa450.ui.theme.DSA450Theme
 import kotlinx.coroutines.flow.collect

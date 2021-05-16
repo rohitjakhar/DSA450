@@ -8,4 +8,6 @@ data class Category(
     val categoryId: Int,
     @Json(name = "TopicName")
     val categoryName: String,
+    @Json(name = "TotalQuestion")
+    val totalQuestion: Int
 )

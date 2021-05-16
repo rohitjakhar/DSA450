@@ -11,7 +11,6 @@ import com.google.android.play.core.appupdate.AppUpdateOptions
 import com.google.android.play.core.install.model.AppUpdateType
 import com.google.android.play.core.install.model.UpdateAvailability
 import com.google.firebase.auth.FirebaseAuth
-import com.rohitjakhar.dsa450.MainActivity
 
 const val UPDATE_REQUEST_TYPE = 3434
 

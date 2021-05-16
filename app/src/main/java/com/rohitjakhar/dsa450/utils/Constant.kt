@@ -1,4 +1,4 @@
-package com.rohitjakhar.dsa450.model.utils
+package com.rohitjakhar.dsa450.utils
 
 object Constant {
     const val GITHUB_REPO = "https://github.com/rohitjakhar/DSA450"

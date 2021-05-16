@@ -15,6 +15,7 @@ sealed class Screen(val route: String, @StringRes val resourceId: Int, val icons
         R.string.questionList,
         Icons.Filled.Favorite
     )
+
     object Profile : Screen("nav_profile", R.string.profile, Icons.Filled.Person)
     object About : Screen("nav_about", R.string.about, Icons.Filled.Info)
 }

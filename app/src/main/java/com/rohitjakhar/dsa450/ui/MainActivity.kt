@@ -1,4 +1,4 @@
-package com.rohitjakhar.dsa450
+package com.rohitjakhar.dsa450.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -9,7 +9,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.*
+import androidx.compose.material.* // ktlint-disable no-wildcard-imports
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Share
 import androidx.compose.runtime.getValue
@@ -20,14 +20,15 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavType
 import androidx.navigation.compose.* // ktlint-disable no-wildcard-imports
+import com.rohitjakhar.dsa450.navigation.MainAction
 import com.rohitjakhar.dsa450.navigation.Screen
 import com.rohitjakhar.dsa450.ui.about.About
 import com.rohitjakhar.dsa450.ui.home.Home
-import com.rohitjakhar.dsa450.ui.home.HomeViewModel
 import com.rohitjakhar.dsa450.ui.profile.Profile
-import com.rohitjakhar.dsa450.ui.questionlist.QuestionList
-import com.rohitjakhar.dsa450.ui.questionlist.QuestionListViewModel
+import com.rohitjakhar.dsa450.ui.questionlist.QuestionListScreen
 import com.rohitjakhar.dsa450.ui.theme.DSA450Theme
+import com.rohitjakhar.dsa450.ui.viewmodel.HomeViewModel
+import com.rohitjakhar.dsa450.ui.viewmodel.QuestionListViewModel
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -98,9 +99,10 @@ class MainActivity : ComponentActivity() {
                                     }
                                 )
                             ) { navBackStack ->
-                                QuestionList(
+                                QuestionListScreen(
                                     id = navBackStack.arguments?.getInt("category_id"),
-                                    questionListViewModel = questionListViewModel
+                                    questionListViewModel = questionListViewModel,
+                                    action = MainAction(navController)
                                 )
                             }
                             composable(
@@ -109,7 +111,9 @@ class MainActivity : ComponentActivity() {
                                 Profile(navController = navController)
                             }
                             composable(route = Screen.About.route) {
-                                About()
+                                About(
+                                    this@MainActivity
+                                )
                             }
                         }
                     }

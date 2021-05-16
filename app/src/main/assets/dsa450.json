@@ -3,6 +3,7 @@
 		"TopicName": "Array",
 		"position": 0,
 		"started": false,
+		"TotalQuestion": 36,
 		"Donequestions": 0,
 		"questions": [
 			{
@@ -228,6 +229,7 @@
 		"TopicName": "Matrix",
 		"position": 1,
 		"started": false,
+		"TotalQuestion": 10,
 		"Donequestions": 0,
 		"questions": [
 			{
@@ -296,6 +298,7 @@
 		"TopicName": "String",
 		"position": 2,
 		"started": false,
+		"TotalQuestion": 43,
 		"Donequestions": 0,
 		"questions": [
 			{
@@ -563,6 +566,7 @@
 		"TopicName": "Search & Sort",
 		"position": 3,
 		"started": false,
+		"TotalQuestion": 36,
 		"Donequestions": 0,
 		"questions": [
 			{
@@ -788,6 +792,7 @@
 		"TopicName": "Linked List",
 		"position": 4,
 		"started": false,
+		"TotalQuestion": 36,
 		"Donequestions": 0,
 		"questions": [
 			{
@@ -1012,6 +1017,7 @@
 		"TopicName": "Binary Trees",
 		"position": 5,
 		"started": false,
+		"TotalQuestion": 35,
 		"Donequestions": 0,
 		"questions": [
 			{
@@ -1230,6 +1236,7 @@
 		"TopicName": "BST",
 		"position": 6,
 		"started": false,
+		"TotalQuestion": 22,
 		"Donequestions": 0,
 		"questions": [
 			{
@@ -1370,6 +1377,7 @@
 		"TopicName": "Greedy",
 		"position": 7,
 		"started": false,
+		"TotalQuestion": 35,
 		"Donequestions": 0,
 		"questions": [
 			{
@@ -1588,6 +1596,7 @@
 		"TopicName": "BackTracking",
 		"position": 8,
 		"started": false,
+		"TotalQuestion": 22,
 		"Donequestions": 0,
 		"questions": [
 			{
@@ -1728,6 +1737,7 @@
 		"TopicName": "Stacks & Queues",
 		"position": 9,
 		"started": false,
+		"TotalQuestion": 38,
 		"Donequestions": 0,
 		"questions": [
 			{
@@ -1964,6 +1974,7 @@
 		"TopicName": "Heap",
 		"position": 10,
 		"started": false,
+		"TotalQuestion": 18,
 		"Donequestions": 0,
 		"questions": [
 			{
@@ -2080,6 +2091,7 @@
 		"TopicName": "Graph",
 		"position": 11,
 		"started": false,
+		"TotalQuestion": 44,
 		"Donequestions": 0,
 		"questions": [
 			{
@@ -2353,6 +2365,7 @@
 		"TopicName": "Trie",
 		"position": 12,
 		"started": false,
+		"TotalQuestion": 6,
 		"Donequestions": 0,
 		"questions": [
 			{
@@ -2397,6 +2410,7 @@
 		"TopicName": "Dynamic Programming",
 		"position": 13,
 		"started": false,
+		"TotalQuestion": 60,
 		"Donequestions": 0,
 		"questions": [
 			{
@@ -2765,6 +2779,7 @@
 		"TopicName": "Bit Manipulation",
 		"position": 14,
 		"started": false,
+		"TotalQuestion": 10,
 		"Donequestions": 0,
 		"questions": [
 			{

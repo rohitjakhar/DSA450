@@ -1,4 +1,4 @@
-package com.rohitjakhar.dsa450.ui.home
+package com.rohitjakhar.dsa450.ui.viewmodel
 
 import android.app.Application
 import android.util.Log

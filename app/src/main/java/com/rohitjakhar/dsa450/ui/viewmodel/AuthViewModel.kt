@@ -1,4 +1,4 @@
-package com.rohitjakhar.dsa450
+package com.rohitjakhar.dsa450.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
