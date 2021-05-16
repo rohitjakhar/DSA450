@@ -2,7 +2,7 @@ package com.rohitjakhar.dsa450.component
 
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.* // ktlint-disable no-wildcard-imports
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
 import androidx.compose.material.Text
@@ -13,11 +13,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavController
-import androidx.navigation.compose.navigate
 import com.rohitjakhar.dsa450.model.Category
 import com.rohitjakhar.dsa450.navigation.MainAction
-import com.rohitjakhar.dsa450.navigation.Screen
 
 @Composable
 fun CategoryCard(

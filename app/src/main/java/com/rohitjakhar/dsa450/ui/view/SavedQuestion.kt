@@ -1,4 +1,4 @@
-package com.rohitjakhar.dsa450.ui.saved
+package com.rohitjakhar.dsa450.ui.view
 
 import androidx.compose.runtime.Composable
 

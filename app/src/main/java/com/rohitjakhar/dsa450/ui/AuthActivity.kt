@@ -24,16 +24,16 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.GoogleAuthProvider
-import com.rohitjakhar.dsa450.ui.viewmodel.AuthViewModel
 import com.rohitjakhar.dsa450.R
 import com.rohitjakhar.dsa450.ui.theme.DSA450Theme
+import com.rohitjakhar.dsa450.ui.viewmodel.AuthViewModel
 import kotlinx.coroutines.flow.collect
 
 class AuthActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            DSA450Theme() {
+            DSA450Theme {
                 val context = LocalContext.current
                 val authViewModel by viewModels<AuthViewModel>()
                 val gso =

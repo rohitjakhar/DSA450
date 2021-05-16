@@ -17,8 +17,8 @@ import coil.transform.CircleCropTransformation
 import com.google.accompanist.coil.rememberCoilPainter
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import com.rohitjakhar.dsa450.utils.Constant.DEFAULT_USER_IMAGE
 import com.rohitjakhar.dsa450.ui.SplashScreen
+import com.rohitjakhar.dsa450.utils.Constant.DEFAULT_USER_IMAGE
 
 @Composable
 fun Profile(
@@ -68,7 +68,12 @@ fun Profile(
             Button(
                 onClick = {
                     Firebase.auth.signOut()
-                    context.startActivity(Intent(context.applicationContext, SplashScreen::class.java))
+                    context.startActivity(
+                        Intent(
+                            context.applicationContext,
+                            SplashScreen::class.java
+                        )
+                    )
                 },
             ) {
                 Text("Logout")
