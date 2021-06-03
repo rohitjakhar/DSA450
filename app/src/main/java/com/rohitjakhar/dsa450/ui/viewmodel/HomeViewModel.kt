@@ -30,7 +30,6 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
             val myJson = application.assets.open("dsa450.json").bufferedReader().use {
                 it.readText()
             }
-
             _categoryList.value = adapter.fromJson(myJson)!!
         } catch (e: Exception) {
             Log.d("Error", e.message.toString())

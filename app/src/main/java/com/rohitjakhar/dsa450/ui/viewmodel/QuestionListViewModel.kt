@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import org.json.JSONArray
 
-class QuestionListViewModel() : ViewModel() {
+class QuestionListViewModel : ViewModel() {
     private var _questionList = MutableStateFlow<List<Question>>(emptyList())
     val questionList: StateFlow<List<Question>> get() = _questionList
 
@@ -38,7 +38,7 @@ class QuestionListViewModel() : ViewModel() {
                 val questionArray = arrTopic.getJSONArray("questions")
                 val ql = adapter.fromJson(questionArray.toString())
 
-                Log.d("TestJson", questionArray.length().toString())
+                Log.d("TestJson: Question Data", questionArray.toString())
 
                 _questionList.value = ql!!
             } catch (e: Exception) {
