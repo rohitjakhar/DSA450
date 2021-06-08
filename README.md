@@ -6,7 +6,7 @@ DSA Cracker Sheet by Love Babbar *Made with love ❤️ by [Rohit Jakhar](https:
 
 ***Try latest Rohit Jakhar App apk from below 👇***
 
-[![DSA450](https://img.shields.io/badge/JetQuotes🌈-APK-black.svg?style=for-the-badge&logo=android)](https://github.com/RohitJakhar/DSA450/releases/download/v1.3/jetquotes.apk)
+[![DSA450](https://img.shields.io/badge/DSA450🌈-APK-black.svg?style=for-the-badge&logo=android)](https://github.com/RohitJakhar/DSA450/releases/download)
 
 ## Built With 🛠
 
